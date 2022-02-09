@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador de corto</title>
+</head>
+<body>
+    <script>
+/* CortoCircuito OR: Cuando el valor de la izquierda en la expresión siempre
+   pueda  validar a True, es el valor que se cargará por defecto.
+   
+   CortoCircuito AND: Cuando el valor de la izquierda en la expresión siempre
+   pueda  validar a True, es el valor que se cargará por defecto.
+   */
+
+   function saludar(nombre){
+       nombre = nombre||"Desconocido";// cortocircuito Asignacion parametros por defecto
+       console.log(`Hola ${nombre}`);
+   }
+   saludar("carlos")
+    </script>
+</body>
+</html>

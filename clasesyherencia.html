@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases y herencia 22</title>
+</head>
+
+<body>
+    <script>
+
+
+        //CLASES: se define class y no reciben parametros
+
+        class Animal {
+            /*El constructor es un método especial que se ejecuta
+            en el momento de instanciar la clase*/
+            constructor(nombre, genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+            //Métodos si pueden recibir parametros
+            sonar() {
+                console.log("hago mucho ruido");
+            }
+
+            saludito() {
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
+        }
+
+        const mimi = new Animal("Mimi", "Hembra"),
+            nito = new Animal("Nito", "Macho");
+
+       console.log(mimi)
+       mimi.saludito()
+       mimi.sonar()
+        //----------------------------------- ahora la herencia-----------------------------------
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+function fcontador(){
+    var num1 = document.getElementById('num1').value;
+   
+    let = total=0;
+    var con=0;
+    k=0;
+    
+   /* do{
+
+        con++
+        document.getElementById('resultado').value=con
+    }
+   while (num1 != "x")
+        document.write("ungrese otro numero");
+        
+   */
+    
+      for (k=0; k<=3;k++){
+        con++;
+        console.log(con);
+      }
+    
+}
+
+function limpiar() {
+document.getElementById('num1').value = "";
+document.getElementById('num1').focus();
+}
+
+
+function terminar(){
+   // document.write(contador);
+}
+    </script>
+</head>
+<body>
+    
+
+    <label for="num1"></label>
+    <input type="text" name="num1" id="num1" placeholder="ingre el numero">
+   <br>
+   
+
+   
+    <label for="resultado" ></label>
+    <input type="text" id="resultado" placeholder="Resultado">
+
+    <button type="button" onclick="fcontador('fcontador') ">Ingresar el dato</button>
+    <button type="button" id="dtlimpiar" onclick="limpiar('limpiar')">Nuevo registro </button>
+    <button type="button" id="dtlimpiar" onclick="terminar('terminar')">Terminar </button>
+
+</body>
+</html

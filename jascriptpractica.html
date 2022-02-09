@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+    <script>
+
+        function modificar() {
+            document.getElementById('demo').innerHTML = "Cambiar texto";
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Cambiar con JAVASCRIPT</h1>
+
+    <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae animi ab mollitia placeat sequi
+        corrupti laboriosam ipsa exercitationem architecto aspernatur? Eligendi asperiores praesentium ad autem
+        quibusdam molestias, voluptates veniam dolorem.</p>
+
+    <button onclick="modificar()">CAmbiar esto</button>
+
+
+
+    <script>
+        var a, b, c;
+        a = 10;
+        b = 34;
+        c = a + b;
+        document.getElementById('demo').innerHTML = c;
+
+    </script>
+
+
+    <script>
+
+
+        function eje() {
+
+            document.getElementById('demo1').innerHTML = "hola";
+            document.getElementById('demo2').innerHTML = "Como estas";
+        }
+
+        function costo() {
+            var valunidad = 35000;
+            var cantida = 100;
+            var total=0;
+            total= valunidad*cantida;
+          
+          document.getElementById('resultado').innerHTML ="El total es :" + total;
+          document.getElementById('variable1').innerHTML=valunidad;
+          document.getElementById('variable2').innerHTML=cantida;
+          document.getElementById('').inn
+          return total;
+    }
+    
+var numero = 5;
+var arreglo =[1,25,'carlos', true];
+for(k=0;k<=10;k++){
+console.log(arreglo[k]);
+}
+
+var j = 0;
+while(j<10){
+console.log(j);
+j = j +2;
+}
+
+var hora=10;
+switch (hora){
+    case 5:
+        console.log("Es el mejor");
+        break
+    case 4:
+        console.log("es muy bueno");
+        break;
+        
+    case 3:
+        console.log("termino medio");
+        break;
+    case 2:
+        console.log("poco esfuerzo");
+        break;
+    case 1: 
+    console.log("Que mal");
+    break;
+    default:
+        console.log("no entiendo");
+        break;
+}
+
+    function suma(){
+        var num1 = (document.getElementById('num1').value);
+        var num2 = (document.getElementById('num2').value);
+        var res;
+       var total=0;
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+               
+    total=num1+num2;
+    res =confirm('desea ingresar otro dato?');
+    return total;   
+}
+    
+
+    </script>
+    <br>
+    <br>
+<label for="num1">Número 1</label>
+<input type="text" name="num1" id="num1">
+<br>
+<label for="num2">Número 2</label>
+<input type="text" name="num2" id="num2">
+<br>
+<label for="resultado">Resultado</label>
+<input type="text" name="resultado" id="resultado">
+<br>
+<br>
+
+
+<button type="button" onclick="document.getElementById('resultado').value = suma();">Cálcular</button>
+
+  
+<form>
+    <fieldset>
+      <legend style="text-align: center;">Tamaño del zumo de fruta</legend>
+      <p>
+        <input type="radio" name="size" id="size_1" value="small">
+        <label for="size_1">Pequeño</label>
+      </p>
+      <p>
+        <input type="radio" name="size" id="size_2" value="medium">
+        <label for="size_2">Mediano</label>
+      </p>
+      <p>
+        <input type="radio" name="size" id="size_3" value="large">
+        <label for="size_3">Grande</label>
+      </p>
+    </fieldset>
+  </form>
+
+  <label for="mensaje" >Mensaje importante</label>
+  <input type="text" >
+  
+
+
+</body>
+
+</html>

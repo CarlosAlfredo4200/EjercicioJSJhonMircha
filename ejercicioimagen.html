@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+*{
+    
+    background: lightblue url("images/foto3.jpg") no-repeat fixed center;
+}
+p{
+    
+    font-size: 30px;
+}
+
+.a:link {color:#ff0000;}
+.a:visited {color:#0000ff;}
+.a:hover {color:#ffcc00;}
+        
+.c{
+    background-color: white;
+    color:black;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.c:hover{
+background-color: #ff0000;
+font-size: 25px;
+color: white;
+}
+
+    </style>
+</head>
+<body>
+<div contenedor>
+
+
+<h1>IMAGEN ESTÁTICA DE FONDO</h1>
+<P class="a">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, amet? Placeat natus fugiat libero! Delectus non, eligendi quidem, laborum accusantium amet vel quo iusto sequi suscipit nostrum neque animi beatae.</P>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolores sapiente velit beatae ipsa sunt laudantium, exercitationem ullam enim aut recusandae! Facere enim dolorum ipsa voluptates eligendi doloremque nulla minima.</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere necessitatibus quam totam pariatur dolore a laudantium veniam magnam, reiciendis laborum. Nihil non quaerat numquam quasi nemo, a reiciendis saepe doloribus?</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa magni eos mollitia, voluptates nulla magnam optio tempora cum est sunt dolorum, eius ab sit harum aperiam deserunt temporibus aliquam architecto.</p>
+</div>
+
+<h4 class="c">CAMBIAR DE COLOR</h4>
+
+<br>
+<h5>EJERCICIOS JAVASCRIPT</h5>
+<P id="practica">Cambiar propiedades </P>
+<button type="button" onclick="document.getElementById('practica').style.fontSize = '60px' ">Cambiar tamaño</button>
+
+<p id="mens">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+<button onclick="document.getElementById('mens').innerHTML = 'hola'   ">Haz click</button>
+
+</body>
+</html>

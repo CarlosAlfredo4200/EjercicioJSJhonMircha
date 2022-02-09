@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo JAVASCRIPT</title>
+</head>
+
+<body>
+
+    <h1>Curso JAVASCRIPT</h1>
+    <h4>Objetos literales clase 19</h4>
+    <h4>Parámetros REST & Operador Spread Clase 20</h4>
+    <h4>Arrow Functions 21</h4>
+    <h4>Prototipos</h4>
+    <h4>Herencia Prototípica</h4>
+    <script>
+        let nombre = "Benito";
+        let edad = 7;
+
+        const perro = {
+            nombre: nombre,
+            edad: edad,
+            ladrar: function () {
+                console.log("guauu")
+            }
+        }
+
+        console.log(perro);
+        perro.ladrar();
+
+        const dog = {
+            nombre,
+            edad,
+            raza: "Criollo",
+            ladrar() {
+                console.log("guauu..guauu")
+            }
+        }
+
+        console.log(dog);
+        dog.ladrar()
+
+        /* Parametros REST:Virtualmente agregar paramentros 
+        infinitos a funcion o denro de una variable*/
+
+        function suma(a, b, ...c) {
+            let resultado = a + b;
+
+            c.forEach(function (n) {
+                resultado += n
+            });
+            return resultado;
+        }
+        console.log(suma(1, 2));
+        console.log(suma(1, 2, 3, 10));
+        console.log(suma(1, 2, 3, 10, 50));
+
+        /*Operador Spread: Operador de propagación...
+        expandir exprecion- un arreglo definido y llegan nuevos
+        parametros*/
+
+
+
+        const arreglo1 = [1, 2, 3, 4, 5],
+            arreglo2 = [6, 7, 8, 9, 10];
+
+        console.log(arreglo1, arreglo2);
+
+        const arreglo3 = [...arreglo1, ...arreglo2];
+        console.log(arreglo3);
+        //---------------------------------------------------------------------------------------------
+        /* Arrow Functions: mayor claridad en  las funciones
+        definir funciones anonimas expresadas ... a una variable 
+        asigno el valor de funcion anonima*/
+
+        //Funcion EXPREADA
+
+        const saludo = function () {
+            console.log("hola FUNCION EXPRESADA NORMAL");
+        }
+        saludo()
+
+        const saludo2 = () => {
+            console.log("hola ARROW 1");
+        }
+        saludo2()
+
+        //Solo si mi funcion tiene una sola linea de INSTRUCCION omitir llaves
+        const saludo3 = () => console.log("hola ARROW SIN LLAVES");
+
+        saludo3()
+        //un solo parametro  va ...sin parentesis
+        const flechaparametros = (nombre) => console.log(`funcion flecha recibe parametros ${nombre}.`);
+        flechaparametros("andres");
+
+        //Ejemplo 2 sis return
+        //   VERSION ANTERIOR
+
+        const adicion = function (a, b) {
+            return a + b;
+        }
+        console.log(adicion(2, 3))
+
+        // NUEVA VERSION ARROW
+
+        const adicion2 = (a, b) => a + b;
+
+        console.log(adicion2(5, 5));
+
+        //SI tengo varias lineas de codigo OBLIGA todo el cuerpo
+
+        const functionCuerpo = () => {
+            console.log("Funcion");
+            console.log("con");
+            console.log("cuerpo");
+        }
+        functionCuerpo();
+
+        //Ejemplo con arreglos
+
+        const numero = [1, 2, 3, 4, 5];
+        numero.forEach(function (el, index) {
+            console.log(`El elemento ${el} esta en la posicion ${index}`);
+        });
+
+
+        //version ARROW
+        const numero2 = [6, 7, 8, 9, 0];
+        numero2.forEach((el, index) => console.log(`El elemento ${el} esta en la posicion ${index}`));
+
+        // la funcion arrow tiene la capasidad de capturar el contexto del objeto donde se encuentra 
+        //CUIDADO con el this... 
+
+        function gato() {
+            console.log(this); // CUIDADO PORQUE aparece Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+        }
+        gato()
+
+        const gato2 = {
+            nombre: "niño",
+            maullar: function () {
+                console.log(this)
+            }
+        }
+        gato2.maullar();
+
+        //version arrow
+
+        const gato3 = {
+            nombre: "niño",
+            maullar3: () => console.log(this)    // CUIDADO PORQUE aparece Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+        }
+        gato3.maullar3();
+
+
+        // ---------------------------------PROTPTIPOS-----------------------------------------//
+        /* POO
+        clases: Modelo a seguir, para generar instancias
+        Objetos: Instancia de una clase ("copia de clase" )
+               Atributos:Es una caracteristica o propiedad del objeto(son variables dentro del objeto)
+               Método: Son acciones que un objeto puede realizar (document.getElementBYId) son funciones dentro de un objeto.
+        
+               PROTOTIPO: Mecanismo por el cual un objeto puede heredar atributos y metodos*/
+
+        //Ejemplo base: dos objetos misma base pero diferentes componetes... Y SI SERIAN 100 ANIMALES???
+        const animal = {
+            nombre: "lobo",
+            sonar() {
+                console.log("Estoy aullando");
+            }
+        }
+        console.log(animal);
+
+
+        const animal2 = {
+            nombre: "Zorro",
+            sonar2() {
+                console.log("Estoy aullando segundo animal");
+            }
+        }
+        console.log(animal2);
+
+        //ENTONDES DEBEMOS CONTRUIR UNA FUNCION  CONTRUTORA  UW GENERA PROPTPTIPO BACIO escribir con forma camello
+        //por eso las mayusculas. si necesito pasar propiedades a la funcion debe ser como parametros de la misma funcion
+
+
+        //FUNCION CONSTRUCTORA "clases"
+        function Animal(nombre, genero) {
+            //Atributos    
+            this.nombre = nombre;
+            this.genero = genero;
+
+            //MÉTODO deb congar del this
+            this.sonido = function () {
+                console.log("hago muchos sonidos");
+            }
+        }
+    
+        /*Crear variables... con new. 
+        Tambien puedo reutilizar los métodos para no generarlos siempre
+        Sacar los metódos de la funcion y los pegamos al prototipo */
+
+         /*...instancias*/  const perrito =new Animal("Benito","Macho"),  
+                                   gaticos=new Animal("Matias","Hembra")
+                                            console.log(perrito);
+      perrito.sonido();
+      gaticos.sonido();
+
+        //VERSION 2...FUNCION CONSTRUCTORA donde asignamos los métodos al prototipo no a la funcion como tal
+      //debo sacar los métodos de la funcion
+        function Animal2(nombrex, generox) { 
+            this.nombrex = nombrex;
+            this.generox = generox;
+             }
+            Animal2.prototype.sonidox = function () {
+                console.log("hago muchos sonidos");    
+        }
+            Animal2.prototype.saludo4 =function(){
+            console.log(`Y mi nombre es ${this.nombrex}`);
+        }
+        
+        const perritox = new Animal2("Benito","Macho"),
+                gaticosx = new Animal2("Matias","Hembra");
+                console.log(perritox);
+                console.log(gaticosx);
+                perritox.sonidox();
+                gaticosx.sonidox();
+                perritox.saludo4();
+                gaticosx.saludo4();
+
+ /* ---------------------Herencia Prototípica---------------------*/
+
+            // Funcion constructora
+                                 function conejo(nombre,genero,tamano){
+/*variable colgada super*/          this.super = Animal; //prototipo... elemento Padre
+        /*Ejecutar*/                this.super(nombre,genero); 
+                                    this.tamano=tamano;
+                                      }
+/*nueva instancia de animal heredando de Animal*/            
+                                    conejo.prototype = new Animal();
+                                    conejo.prototype.constructor = conejo; //asi hereda todas las propiedad del padre Anumal
+
+    </script>
+
+</body>
+
+</html>

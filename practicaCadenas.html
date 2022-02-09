@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const conteoCaracteres = (cadena = "") => (!cadena) ? console.log("No has ingresado nada <br>")
+            : console.log(`La cadena de texto "${cadena}" tiene ${cadena.length} caracteres `);
+
+        //   conteoCaracteres();
+        //   conteoCaracteres("Ahora si se ingreso un texto");
+
+
+        //const contarLetras = ( cadena = undefined) => console.log(`La cadena de texto ${cadena} tiene ${cadena.length} caracteres`);
+        //(contarLetras("carlos Alfredo Montoya");
+
+        const contar = (cadena = undefined) => {
+            console.log(`La cadena de texto ${cadena} tiene ${cadena.length} caracteres`),
+                document.write(`La cadena de texto ${cadena} tiene ${cadena.length} caracteres`);
+        }
+        //contar("carlos")
+
+        const recortar = (cadena = undefined, unidad = undefined) => console.log(cadena.slice(0, unidad), cadena.length);
+        // recortar("carlos",3)
+
+        const separador = (cadena = undefined, separador = undefined) => console.log(cadena.split(separador));
+        // separador("hola mundo como estas","")
+
+        repetir = (cadena = undefined, veces = undefined) => {
+            for (let k = 0; k <= veces; k++) console.log(`${cadena}, ${k}`);
+
+        }
+        //    repetir("carlos",3)
+
+        const uncaracter = (cadena) => console.log(cadena.split("").reverse().join(""));
+
+        uncaracter("Hola Mundo")
+
+
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        
+
+        function myFunction() {
+            fruits.reverse();
+            console.log(fruits);
+        }
+        myFunction()
+        myFunction()
+
+    </script>
+
+
+</body>
+
+</html>
